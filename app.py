@@ -282,6 +282,7 @@ def pushMessage(payload):
 def getTotalSentMessageCount():
     url = "https://api.line.me/v2/bot/message/quota/consumption"
     url = "https://api.line.me/v2/bot/message/quota"
+    url = "https://api.line.me/v2/bot/message/delivery/reply"
     response = requests.get(url, headers=HEADER)
     return response.json()
 
