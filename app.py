@@ -183,7 +183,7 @@ def getNameEmojiMessage():
             {
                 "index": i,
                 "productId": productId,
-                "emojiId": str(k[0]+1).zfill(3) for k in lookUpStr if k[1] == nChar
+                "emojiId": [str(k[0]+1).zfill(3) for k in lookUpStr if k[1] == nChar][0]
             }
         )
         print(emojis_list["emojiId"])
