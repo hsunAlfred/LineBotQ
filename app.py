@@ -171,19 +171,22 @@ def sendTextMessageToMe():
 
 
 def getNameEmojiMessage():
-    lookUpStr = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
-    productId = "5ac21a8c040ab15980c9b43f"
+    lookUpStr = enumerate("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz")
+    productId = "5ac21b4f031a6752fb806d59"
     name = ""
     message = dict()
     message["type"] = "text"
-    message["text"] = {}
+    #message["text"] = {}
     emojis_list = list()
     for i, nChar in enumerate(name):
         emojis_list.append(
             {
-
+                "index": i,
+                "productId": productId,
+                "emojiId": str(k[0]+1).zfill(3) for k in lookUpStr if k[1] == nChar
             }
         )
+        print(emojis_list["emojiId"])
     message["emojis"] = emojis_list
     return message
 
