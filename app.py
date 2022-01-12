@@ -28,30 +28,10 @@ HEADER = {
 }
 
 
-def replyMessage():
-    url = "https://api.line.me/v2/bot/message/reply"
-
-    params = {
-        "replyToken": "nHuyWiB7yP5Zw52FIkcQobQuGDXCTA",
-        "messages": [
-            {
-                "type": "text",
-                "text": "Hello, user"
-            },
-            {
-                "type": "text",
-                "text": "May I help you?"
-            }
-        ]
-    }
-    res = requests.post(url, headers=HEADER, params=params)
-    return res
-
-
 @app.route("/", methods=['POST', 'GET'])
 def index():
     if request.method == 'GET':
-        return replyMessage()
+        return "OK"
     body = request.json
     events = body["events"]
     print(body)
