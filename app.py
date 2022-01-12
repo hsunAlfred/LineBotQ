@@ -272,9 +272,10 @@ def replyMessage(payload):
 
 
 def pushMessage(payload):
-    response = {}
-    print(response.text)
-    return 'OK'
+    url = "https://api.line.me/v2/bot/message/reply"
+
+    res = requests.post(url, headers=HEADER, params=payload)
+    return res
 
 
 def getTotalSentMessageCount():
