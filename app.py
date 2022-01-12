@@ -283,7 +283,7 @@ def getTotalSentMessageCount():
     url = "https://api.line.me/v2/bot/message/quota/consumption"
     url = "https://api.line.me/v2/bot/message/quota"
     response = requests.get(url, headers=HEADER)
-    return response.json()['totalUsage']
+    return response.json()
 
 
 def getTodayCovid19Message():
