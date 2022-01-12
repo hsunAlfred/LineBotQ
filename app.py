@@ -186,7 +186,6 @@ def getNameEmojiMessage():
                 "emojiId": [str(k[0]+1).zfill(3) for k in lookUpStr if k[1] == nChar][0]
             }
         )
-        print(emojis_list["emojiId"])
     message["emojis"] = emojis_list
     return message
 
