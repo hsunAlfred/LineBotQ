@@ -131,15 +131,15 @@ def index():
                               "actions": [
                                  {
                                    "type":"postback",
-                                   "label":"Buy",
-                                   "data":"action=buy&itemid=111",
-                                   "text":"Buy"
+                                   "label":"Yes",
+                                   "data":data1,
+                                   "text":"Yes"
                                 },
                                 {
                                    "type":"postback",
-                                   "label":"Buy",
-                                   "data":"action=buy&itemid=111",
-                                   "text":"Buy"
+                                   "label":"No",
+                                   "data":data2,
+                                   "text":"No"
                                 }
                               ]
                           }
