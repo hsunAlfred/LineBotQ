@@ -114,12 +114,28 @@ def index():
                 print(f'\n\n\n{latitude}\n\n\n')
                 longitude = events[0]["message"]["longitude"]
                 print(f'\n\n\n{longitude}\n\n\n')
-                payload["messages"] = [
-                    getLocationConfirmMessage(title, latitude, longitude)]
+                #payload["messages"] = [
+                #    getLocationConfirmMessage(title, latitude, longitude)]
                 payload["messages"] = [
                     {
-                        "type": "text",
-                        "text": F"已完成預約於的叫車服務"
+                      "type": "template",
+                      "altText": "this is a confirm template",
+                      "template": {
+                          "type": "confirm",
+                          "text": "Are you sure?",
+                          "actions": [
+                              {
+                                "type": "message",
+                                "label": "Yes",
+                                "text": "yes"
+                              },
+                              {
+                                "type": "message",
+                                "label": "No",
+                                "text": "no"
+                              }
+                          ]
+                      }
                     }
                 ]
                 print(f'\n\n\n{payload}\n\n\n')
