@@ -103,6 +103,7 @@ def index():
                     ]
                 replyMessage(payload)
             elif events[0]["message"]["type"] == "location":
+                print('\n\n\nlocation\n\n\n')
                 try:
                     title = events[0]["message"]["title"]
                 except:
