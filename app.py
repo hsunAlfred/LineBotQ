@@ -173,11 +173,36 @@ def index():
                 elif action == "no":
                     del data["action"]
                     payload["messages"] = [
-                    {
-                        "type": "text",
-                        "text": "感謝您的使用"
-                    }
-                ]
+                        {
+                            "type": "text",
+                            "text": "感謝您的使用"
+                        }
+                    ]
+                elif action == "callCar":
+                    del data["action"]
+                    payload["messages"] = [
+                        {
+                            "type": "template",
+                            "altText": "This is a buttons template",
+                            "template": {
+                                    "type": "buttons",
+                                    "title": "Menu",
+                                    "text": "Please select",
+                                    "actions": [
+                                        {
+                                           "type":"datetimepicker",
+                                           "label":"Select date",
+                                           "data":"storeId=12345",
+                                           "mode":"datetime",
+                                           "initial":"2017-12-25t00:00",
+                                           "max":"2030-01-24t23:59",
+                                           "min":"2017-12-25t00:00"
+                                        }
+                                    ]
+                            }
+                        }
+                    ]
+                    
                 replyMessage(payload)
 
     return 'OK'
@@ -253,7 +278,7 @@ def getCarouselMessage(data):
               "type": "image_carousel",
               "columns": [
                   {
-                    "imageUrl": "https://example.com/bot/images/item1.jpg",
+                    "imageUrl": "https://tinyurl.com/2p9auhcs",
                     "action": {
                       "type": "postback",
                       "label": "Buy",
@@ -261,7 +286,7 @@ def getCarouselMessage(data):
                     }
                   },
                   {
-                    "imageUrl": "https://example.com/bot/images/item2.jpg",
+                    "imageUrl": "https://tinyurl.com/2p9auhcs",
                     "action": {
                       "type": "message",
                       "label": "Yes",
@@ -269,11 +294,19 @@ def getCarouselMessage(data):
                     }
                   },
                   {
-                    "imageUrl": "https://example.com/bot/images/item3.jpg",
+                    "imageUrl": "https://tinyurl.com/2p9auhcs",
                     "action": {
                       "type": "uri",
                       "label": "View detail",
                       "uri": "http://example.com/page/222"
+                    }
+                  },
+                  {
+                    "imageUrl": "https://tinyurl.com/2p9auhcs",
+                    "action": {
+                      "type": "postback",
+                      "label": "叫車",
+                      "data": {"action":"callCar"}
                     }
                   }
               ]
