@@ -115,6 +115,7 @@ def index():
                 print(f'\n\n\n{longitude}\n\n\n')
                 payload["messages"] = [
                     getLocationConfirmMessage(title, latitude, longitude)]
+                print(f'\n\n\n{payload}\n\n\n')
                 replyMessage(payload)
         elif events[0]["type"] == "postback":
             if "params" in events[0]["postback"]:
@@ -253,6 +254,7 @@ def getCarouselMessage(data):
 
 def getLocationConfirmMessage(title, latitude, longitude):
     message = dict()
+    print(f'\n\n\n{longitude} {latitude} {longitude}\n\n\n')
     message["type"] = "template"
     message["altText"] = "this is a confirm template"
     data1 = {"title": title, "latitude": latitude,
