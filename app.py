@@ -275,7 +275,7 @@ def getLocationConfirmMessage(title, latitude, longitude):
                   {
                 "type": "Message",
                 "label": "No",
-                "text": "Yes"
+                "text": "No"
               }
           ]
       }
