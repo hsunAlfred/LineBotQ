@@ -42,7 +42,7 @@ def index():
         if events[0]["type"] == "message":
             if events[0]["message"]["type"] == "text":
                 text = events[0]["message"]["text"]
-                if text 'a':
+                if text == 'a':
                     payload["messages"] = [getMRTSoundMessage()]
                 if text == "我的名字":
                     payload["messages"] = [getNameEmojiMessage()]
