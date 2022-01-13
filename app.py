@@ -261,10 +261,10 @@ def getMRTSoundMessage():
     message = dict()
     message["type"] = "audio"
     import os
-    print(os.path.abspath(os.getcwd()))
-    print(os.listdir("./"))
+    print(os.path.abspath(os.getcwd("./static")))
+    print(os.listdir("./static"))
     
-    message["originalContentUrl"] = "/app/static/mrt_sound.m4a"
+    message["originalContentUrl"] = F"{end_point}/static/mrt_sound.m4a"
     import audioread
     with audioread.audio_open('/app/static/mrt_sound.m4a') as f:
         # totalsec contains the length in float
