@@ -50,7 +50,7 @@ def index():
                     payload["messages"] = [getPlayStickerMessage()]
                 elif text == "台北101":
                     payload["messages"] = [getTaipei101ImageMessage(),
-                                           #getTaipei101LocationMessage(),
+                                           getTaipei101LocationMessage(),
                                            getMRTVideoMessage()
                                           ]
                 elif text == "扣打":
@@ -237,7 +237,13 @@ def getPlayStickerMessage():
 
 def getTaipei101LocationMessage():
     message = dict()
-
+    message = {
+        "type": "location",
+        "title": "my location",
+        "address": "1-6-1 Yotsuya, Shinjuku-ku, Tokyo, 160-0004, Japan", 
+        "latitude": 35.687574,
+        "longitude": 139.72922
+    }
     return message
 
 
