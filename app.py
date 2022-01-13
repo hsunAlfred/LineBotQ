@@ -132,12 +132,12 @@ def index():
                                       {
                                         "type": "message",
                                         "label": "Yes",
-                                        "text": ""
+                                        "text": "yes"
                                       },
                                       {
                                         "type": "message",
                                         "label": "No",
-                                        "text": ""
+                                        "text": "no"
                                       }
                                   ]
                               }
