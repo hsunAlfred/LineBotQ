@@ -360,6 +360,7 @@ def getImageMessage(originalContentUrl):
 
 
 def replyMessage(payload):
+    print(f'\n\nreply\n{payload}\n\n\n')
     url = "https://api.line.me/v2/bot/message/reply"
     res = requests.post(url, headers=HEADER, data=json.dumps(payload))
     
