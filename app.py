@@ -131,7 +131,7 @@ def index():
                 payload["messages"] = [
                     {
                         "type": "text",
-                        "text": F"已完成預約於{reservedTime}的叫車服務"
+                        "text": F"已完成預約於的叫車服務"
                     }
                 ]
                 replyMessage(payload)
