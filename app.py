@@ -268,14 +268,14 @@ def getLocationConfirmMessage(title, latitude, longitude):
           "text": "Are you sure?",
           "actions": [
              {
-                "type": "postback",
+                "type": "Message",
                 "label": "Yes",
-                "data": data1
+                "text": "Yes"
               },
                   {
-                "type": "postback",
+                "type": "Message",
                 "label": "No",
-                "data": data2
+                "text": "Yes"
               }
           ]
       }
