@@ -79,12 +79,12 @@ def index():
                                     "actions": [
                                         {
                                             "type": "message",
-                                            "label": "我的名字",
+                                            "label": "台北101",
                                             "text": "台北101"
                                         },
                                         {
                                             "type": "message",
-                                            "label": "今日確診人數",
+                                            "label": "扣打",
                                             "text": "扣打"
                                         },
                                         {
