@@ -78,9 +78,8 @@ def index():
                                     "text": "Please select",
                                     "actions": [
                                         {
-                                            "type": "message",
-                                            "label": "台北101",
-                                            "text": "台北101"
+                                           "type":"location",
+                                           "label":"Location"
                                         },
                                         {
                                             "type": "message",
