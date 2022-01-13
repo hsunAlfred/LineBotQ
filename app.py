@@ -101,6 +101,7 @@ def index():
                             "text": text
                         }
                     ]
+                print(f'\n\n\n{payload}\n\n\n')
                 replyMessage(payload)
             elif events[0]["message"]["type"] == "location":
                 print('\n\n\nlocation\n\n\n')
