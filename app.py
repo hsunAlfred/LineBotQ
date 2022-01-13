@@ -290,25 +290,25 @@ def getLocationConfirmMessage(title, latitude, longitude):
            "text":"Yes"
     }
     message = {
-      "type": "template",
-      "altText": "this is a confirm template",
-      "template": {
-          "type": "confirm",
-          "text": "Are you sure?",
-          "actions": [
-             {
-                "type": "Message",
-                "label": "Yes",
-                "text": "Yes"
-              },
-                  {
-                "type": "Message",
-                "label": "No",
-                "text": "No"
+              "type": "template",
+              "altText": "this is a confirm template",
+              "template": {
+                  "type": "confirm",
+                  "text": "Are you sure?",
+                  "actions": [
+                      {
+                        "type": "message",
+                        "label": "Yes",
+                        "text": "yes"
+                      },
+                      {
+                        "type": "message",
+                        "label": "No",
+                        "text": "no"
+                      }
+                  ]
               }
-          ]
-      }
-    }
+            }
 
     return message
 
