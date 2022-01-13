@@ -80,12 +80,12 @@ def index():
                                         {
                                             "type": "message",
                                             "label": "我的名字",
-                                            "text": "我的名字"
+                                            "text": "台北101"
                                         },
                                         {
                                             "type": "message",
                                             "label": "今日確診人數",
-                                            "text": "今日確診人數"
+                                            "text": "扣打"
                                         },
                                         {
                                             "type": "uri",
