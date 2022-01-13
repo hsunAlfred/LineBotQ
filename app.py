@@ -130,7 +130,7 @@ def index():
                                   "text": "Are you sure?",
                                   "actions": [
                                       {
-                                        "type": "postback",
+                                        "type": "message",
                                         "label": "Yes",
                                         "data": data1
                                       },
