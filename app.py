@@ -114,7 +114,6 @@ def index():
                 replyMessage(payload)
         elif events[0]["type"] == "postback":
             if "params" in events[0]["postback"]:
-                print(events[0]["postback"]["params"])
                 reservedTime = events[0]["postback"]["params"]["datetime"].replace(
                     "T", " ")
                 payload["messages"] = [
@@ -204,6 +203,39 @@ def getCarouselMessage(data):
 
         ]
     }
+    message = {
+          "type": "template",
+          "altText": "this is a image carousel template",
+          "template": {
+              "type": "image_carousel",
+              "columns": [
+                  {
+                    "imageUrl": "https://example.com/bot/images/item1.jpg",
+                    "action": {
+                      "type": "postback",
+                      "label": "Buy",
+                      "data": "action=buy&itemid=111"
+                    }
+                  },
+                  {
+                    "imageUrl": "https://example.com/bot/images/item2.jpg",
+                    "action": {
+                      "type": "message",
+                      "label": "Yes",
+                      "text": "yes"
+                    }
+                  },
+                  {
+                    "imageUrl": "https://example.com/bot/images/item3.jpg",
+                    "action": {
+                      "type": "uri",
+                      "label": "View detail",
+                      "uri": "http://example.com/page/222"
+                    }
+                  }
+              ]
+          }
+        }
     return message
 
 
@@ -228,12 +260,12 @@ def getLocationConfirmMessage(title, latitude, longitude):
              {
                 "type": "postback",
                 "label": "Yes",
-                "data": "action=yes"
+                "data": data
               },
                   {
-                "type": "postback",
-                "label": "Yes",
-                "data": "action=no"
+                "type": "message",
+                "label": "No",
+                "data": "感謝您的使用"
               }
           ]
       }
