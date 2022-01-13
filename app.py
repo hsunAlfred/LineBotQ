@@ -261,7 +261,7 @@ def getMRTSoundMessage():
     message = dict()
     message["type"] = "audio"
     import os
-    print(os.path.abspath(os.getcwd("./static")))
+    print(os.path.abspath("./static"))
     print(os.listdir("./static"))
     
     message["originalContentUrl"] = F"{end_point}/static/mrt_sound.m4a"
