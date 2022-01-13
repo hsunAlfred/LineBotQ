@@ -122,25 +122,25 @@ def index():
                         "longitude": longitude, "action": "no"}
                 
                 payload["messages"] = [
-                       {
+                        {
                           "type": "template",
                           "altText": "this is a confirm template",
                           "template": {
                               "type": "confirm",
                               "text": "Are you sure?",
                               "actions": [
-                                 {
-                                   "type":"postback",
-                                   "label":"Yes",
-                                   "data":data1,
-                                   "text":"Yes"
-                                },
-                                {
-                                   "type":"postback",
-                                   "label":"No",
-                                   "data":data2,
-                                   "text":"No"
-                                }
+                                  {
+                                       "type":"postback",
+                                       "label":"Yes",
+                                       "data":"action=buy&itemid=111",
+                                       "text":"Yes"
+                                    },
+                                    {
+                                       "type":"postback",
+                                       "label":"No",
+                                       "data":"action=buy&itemid=111",
+                                       "text":"No"
+                                    }
                               ]
                           }
                         }
