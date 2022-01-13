@@ -108,8 +108,11 @@ def index():
                     title = events[0]["message"]["title"]
                 except:
                     title = "None"
+                print(f'\n\n\n{title}\n\n\n')
                 latitude = events[0]["message"]["latitude"]
+                print(f'\n\n\n{latitude}\n\n\n')
                 longitude = events[0]["message"]["longitude"]
+                print(f'\n\n\n{longitude}\n\n\n')
                 payload["messages"] = [
                     getLocationConfirmMessage(title, latitude, longitude)]
                 replyMessage(payload)
