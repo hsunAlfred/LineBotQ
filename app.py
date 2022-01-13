@@ -186,7 +186,7 @@ def index():
                             "altText": "This is a buttons template",
                             "template": {
                                     "type": "buttons",
-                                    "title": "Menu",
+                                    "title": "選擇要叫車的時間",
                                     "text": "Please select",
                                     "actions": [
                                         {
