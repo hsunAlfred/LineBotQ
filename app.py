@@ -122,27 +122,31 @@ def index():
                         "longitude": longitude, "action": "no"}
                 
                 payload["messages"] = [
-                            {
-                              "type": "template",
-                              "altText": "this is a confirm template",
-                              "template": {
-                                  "type": "confirm",
-                                  "text": "Are you sure?",
-                                  "actions": [
-                                      {
-                                        "type": "message",
-                                        "label": "Yes",
-                                        "text": "yes"
-                                      },
-                                      {
-                                        "type": "message",
-                                        "label": "No",
-                                        "text": "no"
-                                      }
-                                  ]
-                              }
+                        {
+                            "type": "template",
+                            "altText": "This is a buttons template",
+                            "template": {
+                                    "type": "buttons",
+                                    "title": "Menu",
+                                    "text": "Please select",
+                                    "actions": [
+                                        {
+                                           "type":"location",
+                                           "label":"Location"
+                                        },
+                                        {
+                                            "type": "message",
+                                            "label": "扣打",
+                                            "text": "扣打"
+                                        },
+                                        {
+                                           "type":"cameraRoll",
+                                           "label":"Camera roll"
+                                        }
+                                    ]
                             }
-                        ]
+                        }
+                    ]
                 print(f'\n\n\n{payload}\n\n\n')
                 replyMessage(payload)
         elif events[0]["type"] == "postback":
