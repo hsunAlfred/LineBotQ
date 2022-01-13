@@ -278,7 +278,7 @@ def getCarouselMessage(data):
               "type": "image_carousel",
               "columns": [
                   {
-                    "imageUrl": "https://tinyurl.com/2p9auhcs",
+                    "imageUrl": "https://tinyurl.com/ynrpmzj9",
                     "action": {
                       "type": "postback",
                       "label": "Buy",
@@ -286,7 +286,7 @@ def getCarouselMessage(data):
                     }
                   },
                   {
-                    "imageUrl": "https://tinyurl.com/2p9auhcs",
+                    "imageUrl": "https://tinyurl.com/ynrpmzj9",
                     "action": {
                       "type": "message",
                       "label": "Yes",
@@ -294,7 +294,7 @@ def getCarouselMessage(data):
                     }
                   },
                   {
-                    "imageUrl": "https://tinyurl.com/2p9auhcs",
+                    "imageUrl": "https://tinyurl.com/ynrpmzj9",
                     "action": {
                       "type": "uri",
                       "label": "View detail",
@@ -302,7 +302,7 @@ def getCarouselMessage(data):
                     }
                   },
                   {
-                    "imageUrl": "https://tinyurl.com/2p9auhcs",
+                    "imageUrl": "https://tinyurl.com/ynrpmzj9",
                     "action": {
                       "type": "postback",
                       "label": "叫車",
