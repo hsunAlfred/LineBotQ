@@ -306,7 +306,7 @@ def getCarouselMessage(data):
                     "action": {
                       "type": "postback",
                       "label": "叫車",
-                      "data": {"action":"callCar"}
+                      "data": json.dumps({"action":"callCar"})
                     }
                   }
               ]
