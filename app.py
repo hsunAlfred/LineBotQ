@@ -116,6 +116,12 @@ def index():
                 print(f'\n\n\n{longitude}\n\n\n')
                 payload["messages"] = [
                     getLocationConfirmMessage(title, latitude, longitude)]
+                payload["messages"] = [
+                    {
+                        "type": "text",
+                        "text": F"已完成預約於{reservedTime}的叫車服務"
+                    }
+                ]
                 print(f'\n\n\n{payload}\n\n\n')
                 replyMessage(payload)
         elif events[0]["type"] == "postback":
