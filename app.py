@@ -116,28 +116,33 @@ def index():
                 print(f'\n\n\n{longitude}\n\n\n')
                 #payload["messages"] = [
                 #    getLocationConfirmMessage(title, latitude, longitude)]
+                data1 = {"title": title, "latitude": latitude,
+                        "longitude": longitude, "action": "get_near"}
+                data2 = {"title": title, "latitude": latitude,
+                        "longitude": longitude, "action": "no"}
+                
                 payload["messages"] = [
-                    {
-                      "type": "template",
-                      "altText": "this is a confirm template",
-                      "template": {
-                          "type": "confirm",
-                          "text": "Are you sure?",
-                          "actions": [
-                              {
-                                "type": "message",
-                                "label": "Yes",
-                                "text": "yes"
-                              },
-                              {
-                                "type": "message",
-                                "label": "No",
-                                "text": "no"
+                            {
+                              "type": "template",
+                              "altText": "this is a confirm template",
+                              "template": {
+                                  "type": "confirm",
+                                  "text": "Are you sure?",
+                                  "actions": [
+                                      {
+                                        "type": "postback",
+                                        "label": "Yes",
+                                        "data": data1
+                                      },
+                                      {
+                                        "type": "message",
+                                        "label": "No",
+                                        "text": data2
+                                      }
+                                  ]
                               }
-                          ]
-                      }
-                    }
-                ]
+                            }
+                        ]
                 print(f'\n\n\n{payload}\n\n\n')
                 replyMessage(payload)
         elif events[0]["type"] == "postback":
