@@ -178,6 +178,16 @@ def index():
                             "text": "感謝您的使用"
                         }
                     ]
+                elif action == "pic":
+                    del data["action"]
+                    payload["messages"] = [
+                        getTaipei101ImageMessage()
+                    ]
+                elif action == "video":
+                    del data["action"]
+                    payload["messages"] = [
+                        getMRTVideoMessage()
+                    ]
                 elif action == "callCar":
                     del data["action"]
                     payload["messages"] = [
@@ -281,24 +291,16 @@ def getCarouselMessage(data):
                     "imageUrl": "https://tinyurl.com/ynrpmzj9",
                     "action": {
                       "type": "postback",
-                      "label": "Buy",
-                      "data": "action=buy&itemid=111"
+                      "label": "照片",
+                      "data": json.dumps({"action":"pic"})
                     }
                   },
                   {
                     "imageUrl": "https://tinyurl.com/ynrpmzj9",
                     "action": {
-                      "type": "message",
-                      "label": "Yes",
-                      "text": "yes"
-                    }
-                  },
-                  {
-                    "imageUrl": "https://tinyurl.com/ynrpmzj9",
-                    "action": {
-                      "type": "uri",
-                      "label": "View detail",
-                      "uri": "http://example.com/page/222"
+                      "type": "postback",
+                      "label": "影片",
+                      "data": json.dumps({"action":"video"})
                     }
                   },
                   {
