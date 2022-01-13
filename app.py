@@ -114,6 +114,7 @@ def index():
                 replyMessage(payload)
         elif events[0]["type"] == "postback":
             if "params" in events[0]["postback"]:
+                print(events[0]["postback"]["params"])
                 reservedTime = events[0]["postback"]["params"]["datetime"].replace(
                     "T", " ")
                 payload["messages"] = [
@@ -224,15 +225,15 @@ def getLocationConfirmMessage(title, latitude, longitude):
           "type": "confirm",
           "text": "Are you sure?",
           "actions": [
-              {
-                "type": "message",
+             {
+                "type": "postback",
                 "label": "Yes",
-                "text": "出去玩囉"
+                "data": "action=yes"
               },
-              {
-                "type": "message",
-                "label": "No",
-                "text": "no"
+                  {
+                "type": "postback",
+                "label": "Yes",
+                "data": "action=no"
               }
           ]
       }
