@@ -132,13 +132,13 @@ def index():
                                   {
                                        "type":"postback",
                                        "label":"Yes",
-                                       "data":json.dump(data1),
+                                       "data":json.dumps(data1),
                                        "text":"Yes"
                                     },
                                     {
                                        "type":"postback",
                                        "label":"No",
-                                       "data":json.dump(data2),
+                                       "data":json.dumps(data2),
                                        "text":"No"
                                     }
                               ]
