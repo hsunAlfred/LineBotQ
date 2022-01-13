@@ -135,6 +135,14 @@ def index():
                                            getTaipei101LocationMessage(),
                                            getMRTVideoMessage(),
                                            getCallCarMessage(data)]
+                elif action == "no":
+                    del data["action"]
+                    payload["messages"] = [
+                    {
+                        "type": "text",
+                        "text": "感謝您的使用"
+                    }
+                ]
                 replyMessage(payload)
 
     return 'OK'
@@ -243,8 +251,10 @@ def getLocationConfirmMessage(title, latitude, longitude):
     message = dict()
     message["type"] = "template"
     message["altText"] = "this is a confirm template"
-    data = {"title": title, "latitude": latitude,
+    data1 = {"title": title, "latitude": latitude,
             "longitude": longitude, "action": "get_near"}
+    data2 = {"title": title, "latitude": latitude,
+            "longitude": longitude, "action": "no"}
     message["template"] = {
            "type":"message",
            "label":"Yes",
@@ -263,9 +273,9 @@ def getLocationConfirmMessage(title, latitude, longitude):
                 "data": data
               },
                   {
-                "type": "message",
+                "type": "postback",
                 "label": "No",
-                "data": "感謝您的使用"
+                "data": data2
               }
           ]
       }
