@@ -103,7 +103,10 @@ def index():
                     ]
                 replyMessage(payload)
             elif events[0]["message"]["type"] == "location":
-                title = events[0]["message"]["title"]
+                try:
+                    title = events[0]["message"]["title"]
+                except:
+                    title = "None"
                 latitude = events[0]["message"]["latitude"]
                 longitude = events[0]["message"]["longitude"]
                 payload["messages"] = [
@@ -210,7 +213,9 @@ def getLocationConfirmMessage(title, latitude, longitude):
     data = {"title": title, "latitude": latitude,
             "longitude": longitude, "action": "get_near"}
     message["template"] = {
-
+           "type":"message",
+           "label":"Yes",
+           "text":"Yes"
     }
     return message
 
