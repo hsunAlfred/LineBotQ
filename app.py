@@ -129,16 +129,18 @@ def index():
                               "type": "confirm",
                               "text": "Are you sure?",
                               "actions": [
-                                  {
-                                    "type": "message",
-                                    "label": "Yes",
-                                    "text": "yes"
-                                  },
-                                  {
-                                    "type": "message",
-                                    "label": "No",
-                                    "text": "no"
-                                  }
+                                 {
+                                   "type":"postback",
+                                   "label":"Buy",
+                                   "data":"action=buy&itemid=111",
+                                   "text":"Buy"
+                                },
+                                {
+                                   "type":"postback",
+                                   "label":"Buy",
+                                   "data":"action=buy&itemid=111",
+                                   "text":"Buy"
+                                }
                               ]
                           }
                         }
